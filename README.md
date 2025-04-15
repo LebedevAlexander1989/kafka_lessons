@@ -35,6 +35,11 @@
 3. Timestamp
 4. Header
 
+## Запуск сервера
+.\kafka-storage.bat random-uuid - генерим uuid для кластера
+.\kafka-storage.bat format -t 'сгенерированный uuid' -c ../../config/kraft/server.properties - форматируем логи
+.\kafka-server-start.bat ../../config/kraft/server.properties - запуск сервера кафки
+
 
 
 
