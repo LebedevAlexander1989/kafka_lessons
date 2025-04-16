@@ -59,6 +59,15 @@ log.dirs=
 .\kafka-server-stop.bat - остановить сервер кафки
 ```
 
+## Создание, просмотр и удаление топика
+```
+.\kafka-topics.bat --create --topic payment-created-events-topic --partitions 3 --replication-factor 3 --bootstrap-server localhost:9092,localhost:9094 - создание топика
+.\kafka-topics.bat --list --bootstrap-server localhost:9092,localhost:9094 - просмотр всех топиков
+.\kafka-topics.bat --describe --bootstrap-server localhost:9092,localhost:9094- просмотр детальной информации по топикам
+.\kafka-topics.bat --delete --topic payment-created-events-topic --partitions 3 --replication-factor 3 --bootstrap-server localhost:9092,localhost:9094 - удаление топика
+```
+Если возникла ошибка, можно почистить папку tmp, где пишутся логи
+
 
 
 
