@@ -68,6 +68,11 @@ log.dirs=
 ```
 Если возникла ошибка, можно почистить папку tmp, где пишутся логи
 
+## Отправка сообщений с ключом
+```
+.\kafka-console-producer.bat --bootstrap-server localhost:9092,localhost:9094 --topic payment-send-events-topic --property "parse.key=true" --property "key.separator=:" - отправить сообщение на сервер
+```
+
 
 
 
