@@ -36,9 +36,28 @@
 4. Header
 
 ## Запуск сервера
+```
 .\kafka-storage.bat random-uuid - генерим uuid для кластера
 .\kafka-storage.bat format -t 'сгенерированный uuid' -c ../../config/kraft/server.properties - форматируем логи
 .\kafka-server-start.bat ../../config/kraft/server.properties - запуск сервера кафки
+```
+
+### Кафка cluster. Конфигурация и запуск
+1. Создать server-1.properties, server-2.properties, server-3.properties
+2. Заполнить данными следующие настройки:
+```
+node.id=
+listeners=
+advertised.listeners=
+log.dirs=
+```
+3. Выполнить следующие команды:
+```
+.\kafka-storage.bat random-uuid - генерим uuid для кластера
+.\kafka-storage.bat format -t 'сгенерированный uuid' -c ../../config/kraft/server-*.properties - форматируем логи
+.\kafka-server-start.bat ../../config/kraft/server-*.properties - запуск сервера кафки
+.\kafka-server-stop.bat - остановить сервер кафки
+```
 
 
 
