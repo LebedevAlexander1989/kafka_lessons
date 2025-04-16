@@ -5,8 +5,12 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>org.example</groupId>
-    <artifactId>kafka_lessons</artifactId>
+    <artifactId>kafka-lessons</artifactId>
     <version>1.0-SNAPSHOT</version>
+    <packaging>pom</packaging>
+    <modules>
+        <module>product-microservice</module>
+    </modules>
 
     <properties>
         <maven.compiler.source>17</maven.compiler.source>
