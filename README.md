@@ -79,6 +79,11 @@ log.dirs=
 .\kafka-console-consumer.bat --bootstrap-server localhost:9092,localhost:9094 --topic payment-send-events-topic --property "print.key=true" - выводит последние сообщения
 ```
 
+## Обновление configs
+``
+.\kafka-configs.bat --bootstrap-server localhost:9092,localhost:9094 --alter --entity-type topics --entity-name product-created-event-topic --add-config min.insync.replicas=2 - обновить параметр min.insync.replicas
+``
+
 
 
 
