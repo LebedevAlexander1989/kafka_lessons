@@ -1,4 +1,4 @@
-package com.example.ws.productMicroservice.event;
+package com.example.ws.core.event;
 
 import java.math.BigDecimal;
 

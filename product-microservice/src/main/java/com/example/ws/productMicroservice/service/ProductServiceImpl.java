@@ -1,6 +1,6 @@
 package com.example.ws.productMicroservice.service;
 
-import com.example.ws.productMicroservice.event.ProductCreateEvent;
+import com.example.ws.core.event.ProductCreateEvent;
 import com.example.ws.productMicroservice.service.dto.CreateProductDto;
 import org.apache.kafka.clients.producer.RecordMetadata;
 import org.slf4j.Logger;
