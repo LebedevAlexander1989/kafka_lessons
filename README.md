@@ -70,13 +70,13 @@ log.dirs=
 
 ## Отправка сообщений с ключом
 ```
-.\kafka-console-producer.bat --bootstrap-server localhost:9092,localhost:9094 --topic payment-send-events-topic --property "parse.key=true" --property "key.separator=:" - отправить сообщение на сервер
+.\kafka-console-producer.bat --bootstrap-server localhost:9092,localhost:9094 --topic product-created-event-topic --property "parse.key=true" --property "key.separator=:" - отправить сообщение на сервер
 ```
 
 ## Чтение сообщений
 ```
-.\kafka-console-consumer.bat --bootstrap-server localhost:9092,localhost:9094 --topic payment-send-events-topic --from-beginning --property "print.key=true" - выводит все сообщения с ключем и значением
-.\kafka-console-consumer.bat --bootstrap-server localhost:9092,localhost:9094 --topic payment-send-events-topic --property "print.key=true" - выводит последние сообщения
+.\kafka-console-consumer.bat --bootstrap-server localhost:9092,localhost:9094 --topic product-created-event-topic --from-beginning --property "print.key=true" - выводит все сообщения с ключем и значением
+.\kafka-console-consumer.bat --bootstrap-server localhost:9092,localhost:9094 --topic product-created-event-topic --property "print.key=true" - выводит последние сообщения
 ```
 
 ## Обновление configs
