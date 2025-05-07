@@ -2,6 +2,7 @@ package com.example.ws.productMicroservice.service;
 
 import com.example.ws.core.event.ProductCreateEvent;
 import com.example.ws.productMicroservice.service.dto.CreateProductDto;
+import org.apache.kafka.clients.producer.ProducerRecord;
 import org.apache.kafka.clients.producer.RecordMetadata;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -31,8 +32,18 @@ public class ProductServiceImpl implements ProductService {
                         createProductDto.getTitle(),
                         createProductDto.getPrice(),
                         createProductDto.getQuantity());
+
+        final ProducerRecord<String, ProductCreateEvent> producerRecord = new ProducerRecord<>(
+                "product-created-event-topic",
+                productId,
+                event
+        );
+
+//        producerRecord.headers().add("messageId", UUID.randomUUID().toString().getBytes());
+        producerRecord.headers().add("messageId", "qwerty".getBytes());
+
         final SendResult<String, ProductCreateEvent> result =
-                kafkaTemplate.send("product-created-event-topic", productId, event).get();
+                kafkaTemplate.send(producerRecord).get();
 
         final RecordMetadata recordMetadata = result.getRecordMetadata();
         LOGGER.info("Partition: {}", recordMetadata.partition());
